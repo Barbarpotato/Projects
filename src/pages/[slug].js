@@ -200,7 +200,7 @@ export default function ProjectPage({ project }) {
                 </MotionVStack>
             </MotionBox>
 
-            {/* <Darwin btnRef={btnRef} isOpen={isOpen} onOpen={onOpen} onClose={onClose} content={project.htmlContent} /> */}
+            <Darwin btnRef={btnRef} isOpen={isOpen} onOpen={onOpen} onClose={onClose} content={project.htmlContent} />
 
         </>
     );
