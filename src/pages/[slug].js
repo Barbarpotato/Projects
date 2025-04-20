@@ -1,8 +1,9 @@
 import {
-    Box, VStack, Heading, Text, Image, useBreakpointValue,
+    Box, VStack, Heading, Text, Image, useBreakpointValue, Button,
     Breadcrumb, BreadcrumbItem, BreadcrumbLink, Flex, useDisclosure
 } from '@chakra-ui/react';
-import { useRef } from 'react';
+import { MdSupportAgent } from "react-icons/md";
+import { useRef, useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import Head from 'next/head';
 
@@ -17,6 +18,15 @@ export default function ProjectPage({ project }) {
 
     const { isOpen, onOpen, onClose } = useDisclosure();
     const btnRef = useRef();
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const checkScreen = () => setIsMobile(window.innerWidth < 768);
+        checkScreen();
+        window.addEventListener("resize", checkScreen);
+        return () => window.removeEventListener("resize", checkScreen);
+    }, []);
+
 
     // Responsive values
     const paddingX = useBreakpointValue({ base: '16px', md: '20%' });
@@ -50,7 +60,7 @@ export default function ProjectPage({ project }) {
                     rel="icon"
                     href="https://firebasestorage.googleapis.com/v0/b/personal-blog-darmajr.appspot.com/o/portofolio%2Fadmin%2FAvatar.svg?alt=media&token=622405c3-9dff-4483-af0c-ddc95fbe6445"
                 />
-                <title>Barbarpotato -{project.heading}</title>
+                <title>Barbarpotato - {project.heading}</title>
                 <meta name="description" content={`${project.text + " Project"}`} />
                 <meta property="og:title" content={project.heading} />
                 <meta property="og:description" content={project.text + " Project"} />
@@ -200,7 +210,41 @@ export default function ProjectPage({ project }) {
                 </MotionVStack>
             </MotionBox>
 
-            <Darwin btnRef={btnRef} isOpen={isOpen} onOpen={onOpen} onClose={onClose} content={project.htmlContent} />
+            {/* Floating Button */}
+            {isMobile ? (
+                <button
+                    ref={btnRef}
+                    onClick={onOpen}
+                    style={{
+                        opacity: "70%",
+                        position: 'fixed',
+                        bottom: '20px',
+                        right: '20px',
+                        zIndex: 1000,
+                        backgroundColor: '#ff79c6',
+                        borderRadius: '50%',
+                        padding: '12px',
+                        border: 'none'
+                    }}
+                >
+                    <MdSupportAgent size={30} color="white" />
+                </button>
+            ) : (
+                <Button
+                    ref={btnRef}
+                    position="fixed"
+                    right="20px"
+                    bottom="20px"
+                    zIndex={1000}
+                    colorScheme="purple"
+                    onClick={onOpen}
+                >
+                    Ask Darwin AI
+                </Button>
+            )}
+
+
+            <Darwin btnRef={btnRef} isOpen={isOpen} onOpen={onOpen} onClose={onClose} content={project.htmlContent + project.skillsUrl} />
 
         </>
     );
