@@ -6,6 +6,8 @@ import {
 import { chunkArray, partitionArray } from '../utils/PreprocessProjectData';
 import Loading from '@/components/Loading';
 import { motion } from 'framer-motion';
+import Head from 'next/head';
+
 
 function Project() {
     const [tabletContents, setTabletContents] = useState([]);
@@ -26,7 +28,7 @@ function Project() {
         const fetchProjects = async () => {
             try {
                 setIsLoading(true);
-                const response = await fetch('https://api-barbarpotato.vercel.app/projects');
+                const response = await fetch('https://barbarpotato.github.io/data/projects.json');
                 if (!response.ok) {
                     throw new Error('Failed to fetch projects');
                 }
@@ -73,6 +75,17 @@ function Project() {
 
     return (
         <Fragment>
+
+            <Head>
+                <link
+                    rel="icon"
+                    href="https://firebasestorage.googleapis.com/v0/b/personal-blog-darmajr.appspot.com/o/portofolio%2Fadmin%2FAvatar.svg?alt=media&token=622405c3-9dff-4483-af0c-ddc95fbe6445"
+                />
+                <title>Barbarpotato - Projects</title>
+                <meta name="description" content="A mix of things I’ve built—some for fun, some for work, all focused on making ideas come to life with clean and solid code." />
+                <meta property="og:type" content="project" />
+            </Head>
+
             <Box id='projects' py={20}>
 
 
