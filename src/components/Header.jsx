@@ -51,7 +51,6 @@ function Header() {
     return (
         <>
             <Flex
-                boxShadow="dark-lg"
                 backgroundColor="#292b37"
                 id="navigation"
                 p={5}
