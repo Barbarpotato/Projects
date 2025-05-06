@@ -1,5 +1,6 @@
 // Core Modules
 import { ChakraProvider } from "@chakra-ui/react";
+import { motion } from "framer-motion";
 
 // Custom Components
 import Header from '@/components/Header';
@@ -13,7 +14,18 @@ function MyApp({ Component, pageProps }) {
     return (
         <ChakraProvider>
             {/* Navigation Bar */}
-            <Header />
+
+            <motion.div
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1 }}
+            >
+                <Header />
+            </motion.div>
+
+
+        
+
 
             {/* Render the current page */}
             <Component {...pageProps} />
