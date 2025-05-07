@@ -1,4 +1,5 @@
 import { useState, useEffect, Fragment } from 'react';
+import Darwin from '@/components/Darwin';
 import {
     useBreakpointValue, Flex, Stack, Text, Image,
     Heading, Box, Center, Card, CardBody
@@ -28,7 +29,15 @@ function Project() {
         const fetchProjects = async () => {
             try {
                 setIsLoading(true);
-                const response = await fetch('https://api-barbarpotato.vercel.app/projects');
+
+                let url = "";
+                if (process.env.NODE_ENV === "development") {
+                    url = "Projects/data/projects.json";
+                } else {
+                    url = "https://api-barbarpotato.vercel.app/projects";
+                }
+
+                const response = await fetch(url);
                 if (!response.ok) {
                     throw new Error('Failed to fetch projects');
                 }
@@ -81,7 +90,12 @@ function Project() {
                 <meta property="og:type" content="project" />
             </Head>
 
+            <Darwin />
+
             <Box id='projects' py={20}>
+
+
+
 
 
                 <Box className='stars'></Box>

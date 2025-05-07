@@ -8,7 +8,7 @@ import { motion } from 'framer-motion';
 import Head from 'next/head';
 
 // Custom Components
-import Darwin from '@/components/Darwin';
+import DarwinProject from '@/components/DarwinProject';
 
 
 const MotionBox = motion(Box);
@@ -60,18 +60,11 @@ export default function ProjectPage({ project }) {
                     rel="icon"
                     href="https://firebasestorage.googleapis.com/v0/b/personal-blog-darmajr.appspot.com/o/portofolio%2Fadmin%2FAvatar.svg?alt=media&token=622405c3-9dff-4483-af0c-ddc95fbe6445"
                 />
-                <title>Barbarpotato - {project.heading}</title>
+                <title>Barbarpotato - Project Detail</title>
                 <meta name="description" content={`${project.text + " Project"}`} />
                 <meta property="og:title" content={project.heading} />
                 <meta property="og:description" content={project.text + " Project"} />
                 <meta property="og:type" content="project" />
-                <meta
-                    property="og:url"
-                    content={`https://barbarpotato.github.io/projects/${project.heading
-                        .replace(/[^\w\s-]/g, '')
-                        .trim()
-                        .replace(/\s+/g, '-')}`}
-                />
             </Head>
 
             <MotionBox
@@ -118,6 +111,11 @@ export default function ProjectPage({ project }) {
                         <BreadcrumbItem>
                             <BreadcrumbLink href="https://barbarpotato.github.io" _hover={{ color: '#a8a4ff' }} transition="color 0.2s">
                                 Home
+                            </BreadcrumbLink>
+                        </BreadcrumbItem>
+                        <BreadcrumbItem>
+                            <BreadcrumbLink href="https://barbarpotato.github.io/Projects/" _hover={{ color: '#a8a4ff' }} transition="color 0.2s">
+                                Projects
                             </BreadcrumbLink>
                         </BreadcrumbItem>
                         <BreadcrumbItem isCurrentPage>
@@ -244,7 +242,7 @@ export default function ProjectPage({ project }) {
             )}
 
 
-            <Darwin btnRef={btnRef} isOpen={isOpen} onOpen={onOpen} onClose={onClose} content={project.htmlContent + project.skillsUrl} />
+            <DarwinProject btnRef={btnRef} isOpen={isOpen} onOpen={onOpen} onClose={onClose} content={project.htmlContent + project.skillsUrl} />
 
         </>
     );

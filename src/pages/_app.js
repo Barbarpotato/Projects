@@ -8,12 +8,15 @@ import Footer from '@/components/Footer';
 
 // CSS
 import '../styles/globals.css';  // Import global CSS here
+import Darwin from "@/components/DarwinProject";
 
 
 function MyApp({ Component, pageProps }) {
     return (
         <ChakraProvider>
             {/* Navigation Bar */}
+
+            <Darwin />
 
             <motion.div
                 initial={{ opacity: 0, y: -20 }}
@@ -22,10 +25,6 @@ function MyApp({ Component, pageProps }) {
             >
                 <Header />
             </motion.div>
-
-
-        
-
 
             {/* Render the current page */}
             <Component {...pageProps} />
