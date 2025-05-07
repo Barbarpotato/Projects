@@ -64,12 +64,7 @@ function Project() {
     if (error) return <Text>Error loading projects: {error}</Text>;
 
     // Function to generate href from heading
-    const generateHref = (heading) => {
-        const slug = heading
-            .toLowerCase()
-            .replace(/[^\w\s-]/g, '')
-            .trim()
-            .replace(/\s+/g, '-');
+    const generateHref = (slug) => {
         return `https://barbarpotato.github.io/Projects/${slug}`;
     };
 
