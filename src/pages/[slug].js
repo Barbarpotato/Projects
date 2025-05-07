@@ -251,31 +251,23 @@ export default function ProjectPage({ project }) {
 }
 
 
-
 export async function getStaticPaths() {
     const res = await fetch('https://api-barbarpotato.vercel.app/projects');
     if (!res.ok) return { paths: [], fallback: false };
 
     const { data } = await res.json();
+
     return {
         paths: data.map(project => ({
-            params: {
-                slug: project.heading.toLowerCase()
-                    .replace(/[^\w\s-]/g, '')
-                    .trim()
-                    .replace(/\s+/g, '-')
-            }
+            params: { slug: project.slug }
         })),
         fallback: false
     };
 }
 
+
 export async function getStaticProps({ params }) {
-
-    // translate the heading slug to normal heading
-    const heading = params.slug.replace(/-/g, ' ');
-
-    const res = await fetch(`https://api-barbarpotato.vercel.app/projects?heading=${encodeURIComponent(heading)}`);
+    const res = await fetch(`https://api-barbarpotato.vercel.app/projects?slug=${params.slug}`);
     if (!res.ok) return { notFound: true };
 
     let project = await res.json();

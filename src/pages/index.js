@@ -117,7 +117,7 @@ function Project() {
                             <Center mx={5} my={5} key={`project-regular-${idx}`}>
                                 <Card
                                     as="a"
-                                    href={generateHref(object.heading)}
+                                    href={generateHref(object.slug)}
                                     boxShadow={'dark-lg'}
                                     backgroundColor={"#292b37"}
                                     maxW='xl'
@@ -138,7 +138,7 @@ function Project() {
                                             <Text color={"#faf9ff"} fontWeight={'bold'}>{object.text}</Text>
                                             <Box
                                                 as="a"
-                                                href={generateHref(object.heading)}
+                                                href={generateHref(object.slug)}
                                                 color="#bd93f9"
                                                 fontWeight="bold"
                                                 fontSize="sm"
@@ -167,7 +167,7 @@ function Project() {
                                         <Flex key={`tablet-project-large-${idx}`}>
                                             <Card
                                                 as="a"
-                                                href={generateHref(contentArray[0].heading)}
+                                                href={generateHref(contentArray[0].slug)}
                                                 margin={5}
                                                 boxShadow={'dark-lg'}
                                                 backgroundColor={"#292b37"}
@@ -187,7 +187,7 @@ function Project() {
                                                         <Text color={"#faf9ff"} fontWeight={'bold'}>{contentArray[0].text}</Text>
                                                         <Box
                                                             as="a"
-                                                            href={generateHref(contentArray[0].heading)}
+                                                            href={generateHref(contentArray[0].slug)}
                                                             color="#bd93f9"
                                                             fontWeight="bold"
                                                             fontSize="sm"
@@ -209,7 +209,7 @@ function Project() {
                                             {contentArray.map((content, contentIdx) => (
                                                 <Card
                                                     as="a"
-                                                    href={generateHref(content.heading)}
+                                                    href={generateHref(content.slug)}
                                                     key={`tablet-project-small-${contentIdx}`}
                                                     margin={5}
                                                     boxShadow={'dark-lg'}
@@ -232,7 +232,7 @@ function Project() {
                                                             <Text color={"#faf9ff"} fontWeight={'bold'}>{content.text}</Text>
                                                             <Box
                                                                 as="a"
-                                                                href={generateHref(content.heading)}
+                                                                href={generateHref(content.slug)}
                                                                 color="#bd93f9"
                                                                 fontWeight="bold"
                                                                 fontSize="sm"
@@ -267,7 +267,7 @@ function Project() {
                                             {contentArray.length === 1 ? (
                                                 <Card
                                                     as="a"
-                                                    href={generateHref(contentArray[0].heading)}
+                                                    href={generateHref(contentArray[0].slug)}
                                                     className='project-card'
                                                     margin={5}
                                                     boxShadow={'dark-lg'}
@@ -290,7 +290,7 @@ function Project() {
                                                             <Text color={"#faf9ff"} fontWeight={'bold'}>{contentArray[0].text}</Text>
                                                             <Box
                                                                 as="a"
-                                                                href={generateHref(contentArray[0].heading)}
+                                                                href={generateHref(contentArray[0].slug)}
                                                                 color="#bd93f9"
                                                                 fontWeight="bold"
                                                                 fontSize="sm"
@@ -311,7 +311,7 @@ function Project() {
                                                     {contentArray.map((object, index) => (
                                                         <Card
                                                             as="a"
-                                                            href={generateHref(object.heading)}
+                                                            href={generateHref(object.slug)}
                                                             key={index}
                                                             className='project-card'
                                                             margin={5}
@@ -337,7 +337,7 @@ function Project() {
                                                                     <Text color={"#faf9ff"} fontWeight={'bold'}>{object.text}</Text>
                                                                     <Box
                                                                         as="a"
-                                                                        href={generateHref(object.heading)}
+                                                                        href={generateHref(object.slug)}
                                                                         color="#bd93f9"
                                                                         fontWeight="bold"
                                                                         fontSize="sm"
@@ -363,7 +363,7 @@ function Project() {
                                     {desktopContent?.rightPartitions.map((content, idx) => (
                                         <Card
                                             as="a"
-                                            href={generateHref(content.heading)}
+                                            href={generateHref(content.slug)}
                                             key={`right-partition-${idx}`}
                                             className='project-card'
                                             margin={5}
@@ -389,7 +389,7 @@ function Project() {
                                                     <Text color={"#faf9ff"} fontWeight={'bold'}>{content.text}</Text>
                                                     <Box
                                                         as="a"
-                                                        href={generateHref(content.heading)}
+                                                        href={generateHref(content.slug)}
                                                         color="#bd93f9"
                                                         fontWeight="bold"
                                                         fontSize="sm"
