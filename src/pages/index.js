@@ -28,7 +28,7 @@ function Project() {
         const fetchProjects = async () => {
             try {
                 setIsLoading(true);
-                const response = await fetch('https://barbarpotato.github.io/data/projects.json');
+                const response = await fetch('https://api-barbarpotato.vercel.app/projects');
                 if (!response.ok) {
                     throw new Error('Failed to fetch projects');
                 }
