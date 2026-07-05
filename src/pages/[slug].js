@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Link from 'next/link';
 import { FaArrowLeft } from 'react-icons/fa';
 import {
     Box, Heading, Text, HStack, Tooltip,
@@ -122,8 +123,8 @@ export default function ProjectPage({ project }) {
                             {/* Back button */}
                             <motion.div variants={heroItemVariants}>
                                 <Box
-                                    as="a"
-                                    href="https://barbarpotato.github.io/"
+                                    as={Link}
+                                    href="/"
                                     display="flex"
                                     alignItems="center"
                                     gap={2}
