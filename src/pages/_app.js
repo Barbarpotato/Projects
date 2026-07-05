@@ -7,6 +7,7 @@ import Footer from '@/components/Footer';
 
 // CSS
 import '../styles/globals.css';  // Import global CSS here
+import '../styles/StarField.css';
 
 
 function MyApp({ Component, pageProps }) {
