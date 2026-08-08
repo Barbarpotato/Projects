@@ -50,10 +50,10 @@ function ProjectListCard({ project, index = 0, size = 'sm' }) {
                     <Text
                         mt={3}
                         className="masonry-tile-title"
-                        fontFamily="'Playfair Display', Georgia, serif"
+                        fontFamily="'Space Grotesk', system-ui, sans-serif"
                         fontWeight="700"
                         fontSize="lg"
-                        color="#faf9ff"
+                        color="#000000"
                         noOfLines={1}
                         flexShrink={0}
                     >
@@ -67,7 +67,7 @@ function ProjectListCard({ project, index = 0, size = 'sm' }) {
                         fontSize="xs"
                         letterSpacing="0.08em"
                         textTransform="uppercase"
-                        color="#866bab"
+                        color="#666666"
                         flexShrink={0}
                     >
                         Studi Kasus Proyek

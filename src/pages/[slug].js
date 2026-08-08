@@ -80,7 +80,7 @@ export default function ProjectPage({ project }) {
     return (
         <>
             <Head>
-                <link rel="icon" href="https://firebasestorage.googleapis.com/v0/b/personal-blog-darmajr.appspot.com/o/portofolio%2Fadmin%2FAvatar.svg?alt=media&token=622405c3-9dff-4483-af0c-ddc95fbe6445" />
+                <link rel="icon" href="/Projects/Avatar.ico" />
                 <title>{project.heading}</title>
                 <meta name="description" content={project.text} />
                 <meta property="og:title" content={project.heading} />
@@ -90,7 +90,7 @@ export default function ProjectPage({ project }) {
                 <meta property="og:url" content={`https://barbarpotato.github.io/Projects/${project.slug}`} />
             </Head>
 
-            <Box as="article" bg="#292b37" minH="100vh">
+            <Box as="article" bg="#ffffff" minH="100vh">
 
                 {/* ── Hero ── */}
                 <Box
@@ -98,7 +98,7 @@ export default function ProjectPage({ project }) {
                     overflow="hidden"
                     pt={{ base: 12, md: 20 }}
                     pb={{ base: 10, md: 16 }}
-                    borderBottom="1px solid rgba(134, 107, 171, 0.12)"
+                    borderBottom="1px solid rgba(0, 0, 0, 0.12)"
                 >
                     {/* Ambient glow blobs — animated pulse */}
                     <motion.div
@@ -129,12 +129,12 @@ export default function ProjectPage({ project }) {
                                     alignItems="center"
                                     gap={2}
                                     mb={8}
-                                    color="#866bab"
+                                    color="#000000"
                                     fontFamily="'Outfit', system-ui, sans-serif"
                                     fontSize="sm"
                                     fontWeight="500"
-                                    transition="color 0.2s ease"
-                                    _hover={{ color: "#cc7bc9" }}
+                                    transition="opacity 0.2s ease"
+                                    _hover={{ opacity: 0.6 }}
                                     style={{ textDecoration: 'none', width: 'fit-content' }}
                                 >
                                     <FaArrowLeft size={13} />
@@ -145,15 +145,15 @@ export default function ProjectPage({ project }) {
                             {/* Eyebrow label */}
                             <motion.div variants={heroItemVariants}>
                                 <HStack spacing={3} mb={6}>
-                                    <Box w="24px" h="1px" bg="#866bab" borderRadius="full" />
-                                    <Box w="5px" h="5px" borderRadius="full" bg="#866bab" flexShrink={0} />
+                                    <Box w="24px" h="1px" bg="#000000" borderRadius="full" />
+                                    <Box w="5px" h="5px" borderRadius="full" bg="#000000" flexShrink={0} />
                                     <Text
                                         fontFamily="'Outfit', sans-serif"
                                         fontWeight="600"
                                         fontSize="10px"
                                         letterSpacing="0.30em"
                                         textTransform="uppercase"
-                                        color="#866bab"
+                                        color="#666666"
                                     >
                                         Studi Kasus Proyek
                                     </Text>
@@ -163,40 +163,15 @@ export default function ProjectPage({ project }) {
                             {/* Title */}
                             <motion.div variants={heroItemVariants}>
                                 <Heading
-                                    position="relative"
-                                    display="inline-block"
-                                    fontFamily="'Playfair Display', Georgia, serif"
-                                    fontWeight="800"
-                                    fontStyle="italic"
+                                    fontFamily="'Space Grotesk', system-ui, sans-serif"
+                                    fontWeight="700"
                                     fontSize={{ base: "3xl", md: "5xl", lg: "6xl" }}
-                                    color="#faf9ff"
+                                    color="#000000"
                                     lineHeight="1.15"
                                     letterSpacing="-0.01em"
                                     mb={6}
                                 >
                                     {project.heading}
-                                    <svg
-                                        viewBox="0 0 200 14"
-                                        style={{
-                                            position: 'absolute',
-                                            bottom: '-10px',
-                                            left: 0,
-                                            width: '100%',
-                                            overflow: 'visible',
-                                            pointerEvents: 'none',
-                                        }}
-                                    >
-                                        <motion.path
-                                            d="M 4,7 C 50,1 150,1 196,7"
-                                            fill="none"
-                                            stroke="#cc7bc9"
-                                            strokeWidth="3.5"
-                                            strokeLinecap="round"
-                                            initial={{ pathLength: 0, opacity: 0 }}
-                                            animate={{ pathLength: 1, opacity: 1 }}
-                                            transition={{ duration: 1, delay: 0.7, ease: 'easeInOut' }}
-                                        />
-                                    </svg>
                                 </Heading>
                             </motion.div>
 
@@ -205,7 +180,7 @@ export default function ProjectPage({ project }) {
                                 <Text
                                     fontFamily="'Outfit', system-ui, sans-serif"
                                     fontSize={{ base: "md", md: "lg" }}
-                                    color="#c0c0c0"
+                                    color="#666666"
                                     lineHeight="1.8"
                                     maxW="640px"
                                     mb={8}
@@ -226,7 +201,7 @@ export default function ProjectPage({ project }) {
                                                 transition={{ duration: 0.5, delay: 0.5 + i * 0.06, ease: [0.2, 0.8, 0.2, 1] }}
                                                 whileHover={{ y: -4, transition: { duration: 0.2 } }}
                                             >
-                                                <Tooltip label={skill} bg="#383a4a" color="#faf9ff" fontSize="xs">
+                                                <Tooltip label={skill} bg="#000000" color="#ffffff" fontSize="xs">
                                                     <span className="skill-chip">
                                                         <img src={`https://skillicons.dev/icons?i=${skill}`} alt={skill} />
                                                     </span>
@@ -245,8 +220,8 @@ export default function ProjectPage({ project }) {
                                     style={{
                                         borderRadius: '16px',
                                         overflow: 'hidden',
-                                        border: '1px solid rgba(134, 107, 171, 0.25)',
-                                        boxShadow: '0px 0px 50px rgba(204, 123, 201, 0.15)',
+                                        border: '1px solid rgba(0, 0, 0, 0.15)',
+                                        boxShadow: '0px 0px 50px rgba(0, 0, 0, 0.18)',
                                     }}
                                 >
                                     <img
@@ -276,43 +251,41 @@ export default function ProjectPage({ project }) {
                 {/* ── Gallery ── */}
                 {galleryImages.length > 0 && (
                     <Box
-                        bg="rgba(56, 58, 74, 0.35)"
-                        borderTop="1px solid rgba(134, 107, 171, 0.12)"
-                        borderBottom="1px solid rgba(134, 107, 171, 0.12)"
+                        bg="#ffffff"
+                        borderTop="1px solid rgba(0, 0, 0, 0.12)"
+                        borderBottom="1px solid rgba(0, 0, 0, 0.12)"
                         py={{ base: 12, md: 16 }}
                     >
                         <Box mx="auto" maxW={{ base: "720px", md: "1060px" }} px={{ base: 5, md: 8 }}>
-                            <Box mb={4}>
+                            <Box mb={4} display="flex" gap={2} flexWrap="wrap">
                                 <Heading
-                                    fontFamily="'Playfair Display', Georgia, serif"
-                                    fontWeight="800"
-                                    fontStyle="italic"
+                                    fontFamily="'Space Grotesk', system-ui, sans-serif"
+                                    fontWeight="700"
                                     fontSize={{ base: "2xl", md: "3xl" }}
-                                    color="#faf9ff"
-                                    display="inline-block"
+                                    display="inline"
                                 >
-                                    Galeri{" "}
-                                    <Box as="span" position="relative" display="inline-block">
+                                    <Box
+                                        as="span"
+                                        display="inline-block"
+                                        bg="#000000"
+                                        color="#ffffff"
+                                        px={{ base: 3, md: 4 }}
+                                        py={{ base: 0.5, md: 1 }}
+                                        borderRadius="md"
+                                        mr={2}
+                                    >
+                                        Galeri
+                                    </Box>
+                                    <Box
+                                        as="span"
+                                        display="inline-block"
+                                        bg="#000000"
+                                        color="#ffffff"
+                                        px={{ base: 3, md: 4 }}
+                                        py={{ base: 0.5, md: 1 }}
+                                        borderRadius="md"
+                                    >
                                         Proyek
-                                        <svg
-                                            viewBox="0 0 200 14"
-                                            style={{
-                                                position: 'absolute',
-                                                bottom: '-6px',
-                                                left: 0,
-                                                width: '100%',
-                                                overflow: 'visible',
-                                                pointerEvents: 'none',
-                                            }}
-                                        >
-                                            <path
-                                                d="M 4,7 C 50,1 150,1 196,7"
-                                                fill="none"
-                                                stroke="#cc7bc9"
-                                                strokeWidth="3.5"
-                                                strokeLinecap="round"
-                                            />
-                                        </svg>
                                     </Box>
                                 </Heading>
                             </Box>
@@ -320,7 +293,7 @@ export default function ProjectPage({ project }) {
                             <Text
                                 fontFamily="'Outfit', system-ui, sans-serif"
                                 fontSize="sm"
-                                color="#c0c0c0"
+                                color="#666666"
                                 mb={8}
                             >
                                 Klik gambar untuk memperbesar

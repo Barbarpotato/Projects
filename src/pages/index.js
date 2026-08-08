@@ -19,7 +19,7 @@ export default function ProjectsIndex({ projects }) {
     return (
         <>
             <Head>
-                <link rel="icon" href="https://firebasestorage.googleapis.com/v0/b/personal-blog-darmajr.appspot.com/o/portofolio%2Fadmin%2FAvatar.svg?alt=media&token=622405c3-9dff-4483-af0c-ddc95fbe6445" />
+                <link rel="icon" href="/Projects/Avatar.ico" />
                 <title>Darmawan Jr - Proyek</title>
                 <meta name="description" content="Kumpulan proyek yang telah dikembangkan oleh Darmawan Jr, mulai dari aplikasi mobile, platform web, hingga sistem internal perusahaan." />
                 <meta property="og:title" content="Darmawan Jr - Proyek" />
@@ -27,10 +27,10 @@ export default function ProjectsIndex({ projects }) {
                 <meta property="og:url" content="https://barbarpotato.github.io/Projects/" />
             </Head>
 
-            <Box minH="100vh" bg="#292b37" position="relative">
+            <Box minH="100vh" bg="#ffffff" position="relative">
 
                 {/* ── Hero ── */}
-                <Box position="relative" overflow="hidden" borderBottom="1px solid rgba(134, 107, 171, 0.12)">
+                <Box position="relative" overflow="hidden" borderBottom="1px solid rgba(0, 0, 0, 0.12)">
                     <Box position="absolute" inset={0} overflow="hidden" pointerEvents="none" zIndex={0}>
                         <StarField />
                     </Box>
@@ -42,57 +42,53 @@ export default function ProjectsIndex({ projects }) {
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.7, delay: 0.2 }}
                             >
-                                <Box mb={6} lineHeight="1.2">
+                                <Box mb={6} lineHeight="1.3">
                                     <Heading
                                         as="h1"
-                                        fontFamily="'Playfair Display', Georgia, serif"
-                                        fontWeight="800"
-                                        fontStyle="italic"
+                                        fontFamily="'Space Grotesk', system-ui, sans-serif"
+                                        fontWeight="700"
                                         fontSize={{ base: '4xl', md: '5xl', lg: '6xl' }}
-                                        color="#faf9ff"
                                         display="block"
                                     >
-                                        Seluruh
+                                        <Box
+                                            as="span"
+                                            display="inline-block"
+                                            bg="#000000"
+                                            color="#ffffff"
+                                            px={{ base: 3, md: 4 }}
+                                            py={{ base: 0.5, md: 1 }}
+                                            borderRadius="md"
+                                        >
+                                            Seluruh
+                                        </Box>
                                     </Heading>
 
-                                    <Box display="inline-block" position="relative" mt={1}>
-                                        <Heading
+                                    <Heading
+                                        as="span"
+                                        fontFamily="'Space Grotesk', system-ui, sans-serif"
+                                        fontWeight="700"
+                                        fontSize={{ base: '4xl', md: '5xl', lg: '6xl' }}
+                                        display="block"
+                                        mt={2}
+                                    >
+                                        <Box
                                             as="span"
-                                            fontFamily="'Playfair Display', Georgia, serif"
-                                            fontWeight="800"
-                                            fontStyle="italic"
-                                            fontSize={{ base: '4xl', md: '5xl', lg: '6xl' }}
-                                            color="#faf9ff"
-                                            display="inline"
+                                            display="inline-block"
+                                            bg="#000000"
+                                            color="#ffffff"
+                                            px={{ base: 3, md: 4 }}
+                                            py={{ base: 0.5, md: 1 }}
+                                            borderRadius="md"
                                         >
                                             Proyek
-                                        </Heading>
-                                        <svg
-                                            viewBox="0 0 200 14"
-                                            style={{
-                                                position: 'absolute',
-                                                bottom: '-10px',
-                                                left: 0,
-                                                width: '100%',
-                                                overflow: 'visible',
-                                                pointerEvents: 'none',
-                                            }}
-                                        >
-                                            <path
-                                                d="M 4,7 C 50,1 150,1 196,7"
-                                                fill="none"
-                                                stroke="#cc7bc9"
-                                                strokeWidth="3.5"
-                                                strokeLinecap="round"
-                                            />
-                                        </svg>
-                                    </Box>
+                                        </Box>
+                                    </Heading>
                                 </Box>
 
                                 <Text
                                     fontFamily="'Outfit', system-ui, sans-serif"
                                     fontSize={{ base: 'md', md: 'lg' }}
-                                    color="#c0c0c0"
+                                    color="#666666"
                                     maxW="580px"
                                     lineHeight="1.85"
                                 >
@@ -128,7 +124,7 @@ export default function ProjectsIndex({ projects }) {
                     ) : (
                         <Text
                             fontFamily="'Outfit', system-ui, sans-serif"
-                            color="#c0c0c0"
+                            color="#666666"
                             textAlign="center"
                         >
                             Belum ada proyek untuk ditampilkan.

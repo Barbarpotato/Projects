@@ -67,10 +67,10 @@ const ProjectGallery = ({ images }) => {
                             onClick={(e) => { e.stopPropagation(); close(); }}
                             className="lightbox-close"
                             isRound
-                            bg="rgba(41,43,55,0.8)"
-                            border="1px solid rgba(134,107,171,0.4)"
-                            color="#faf9ff"
-                            _hover={{ bg: '#866bab' }}
+                            bg="rgba(255,255,255,0.12)"
+                            border="1px solid rgba(255,255,255,0.4)"
+                            color="#ffffff"
+                            _hover={{ bg: '#ffffff', color: '#000000' }}
                             transition="all 0.2s ease"
                         />
 
@@ -81,10 +81,10 @@ const ProjectGallery = ({ images }) => {
                                 onClick={(e) => { e.stopPropagation(); showPrev(); }}
                                 className="lightbox-nav lightbox-prev"
                                 isRound
-                                bg="rgba(41,43,55,0.6)"
-                                border="1px solid rgba(134,107,171,0.4)"
-                                color="#faf9ff"
-                                _hover={{ bg: '#866bab' }}
+                                bg="rgba(255,255,255,0.12)"
+                                border="1px solid rgba(255,255,255,0.4)"
+                                color="#ffffff"
+                                _hover={{ bg: '#ffffff', color: '#000000' }}
                                 transition="all 0.2s ease"
                             />
                         )}
@@ -108,10 +108,10 @@ const ProjectGallery = ({ images }) => {
                                 onClick={(e) => { e.stopPropagation(); showNext(); }}
                                 className="lightbox-nav lightbox-next"
                                 isRound
-                                bg="rgba(41,43,55,0.6)"
-                                border="1px solid rgba(134,107,171,0.4)"
-                                color="#faf9ff"
-                                _hover={{ bg: '#866bab' }}
+                                bg="rgba(255,255,255,0.12)"
+                                border="1px solid rgba(255,255,255,0.4)"
+                                color="#ffffff"
+                                _hover={{ bg: '#ffffff', color: '#000000' }}
                                 transition="all 0.2s ease"
                             />
                         )}
@@ -121,7 +121,7 @@ const ProjectGallery = ({ images }) => {
                                 className="lightbox-counter"
                                 fontFamily="'Outfit', system-ui, sans-serif"
                                 fontSize="xs"
-                                color="#c0c0c0"
+                                color="#ffffff"
                             >
                                 {activeIndex + 1} / {images.length}
                             </Text>

@@ -63,8 +63,8 @@
 /* ── Base ── */
 body {
     font-family: 'Outfit', system-ui, -apple-system, sans-serif;
-    background-color: #292b37 !important;
-    color: #faf9ff !important;
+    background-color: #ffffff !important;
+    color: #000000 !important;
 }
 
 img {
@@ -74,35 +74,35 @@ img {
 }
 
 ::selection {
-    color: #cc7bc9;
-    background-color: #866bab;
+    color: #ffffff;
+    background-color: #000000;
 }
 
 /* Scrollbar */
 ::-webkit-scrollbar { height: 5px; width: 10px; border-radius: 5px; }
-::-webkit-scrollbar-track { background: #282a36; border-radius: 5px; }
-::-webkit-scrollbar-thumb { background: #866bab; border-radius: 5px; }
-::-webkit-scrollbar-thumb:hover { background: #cc7bc9; }
+::-webkit-scrollbar-track { background: #f0f0f0; border-radius: 5px; }
+::-webkit-scrollbar-thumb { background: #000000; border-radius: 5px; }
+::-webkit-scrollbar-thumb:hover { background: #444444; }
 
 section {
-    background-color: #292b37 !important;
-    color: #faf9ff !important;
+    background-color: #ffffff !important;
+    color: #000000 !important;
 }
 
 /* Social icons */
-.social-icon { transition: transform 0.3s ease-in-out; color: #866bab; }
-.social-icon:hover { transform: scale(1.3); color: #cc7bc9; }
+.social-icon { transition: transform 0.3s ease-in-out; color: #000000; }
+.social-icon:hover { transform: scale(1.3); }
 
 /* ── Project description typography ── */
 .content {
     font-family: 'Outfit', system-ui, sans-serif;
     font-size: 1.05rem;
     line-height: 1.85;
-    color: #d0d0d0;
+    color: #666666;
 }
 
 .content p {
-    color: #d0d0d0;
+    color: #666666;
     font-size: 1em;
     line-height: 1.85;
     margin-bottom: 1.4em;
@@ -124,7 +124,7 @@ section {
     cursor: zoom-in;
     border-radius: 12px;
     overflow: hidden;
-    border: 1px solid rgba(134, 107, 171, 0.15);
+    border: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 .gallery-item img {
@@ -144,8 +144,8 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(20, 18, 30, 0.35);
-    color: #faf9ff;
+    background: rgba(0, 0, 0, 0.45);
+    color: #ffffff;
     opacity: 0;
     transition: opacity 0.25s ease;
 }
@@ -163,7 +163,7 @@ section {
     position: fixed;
     inset: 0;
     z-index: 1000;
-    background: rgba(15, 14, 22, 0.92);
+    background: rgba(0, 0, 0, 0.92);
     backdrop-filter: blur(6px);
     display: flex;
     align-items: center;
@@ -175,8 +175,8 @@ section {
     max-height: 82vh;
     margin: 0;
     border-radius: 12px;
-    border: 1px solid rgba(134, 107, 171, 0.3);
-    box-shadow: 0px 0px 60px rgba(204, 123, 201, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0px 0px 60px rgba(0, 0, 0, 0.5);
     cursor: default;
 }
 
@@ -204,8 +204,8 @@ section {
     transform: translateX(-50%);
     padding: 6px 16px;
     border-radius: 999px;
-    background: rgba(41, 43, 55, 0.7);
-    border: 1px solid rgba(134, 107, 171, 0.3);
+    background: rgba(0, 0, 0, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.25);
 }
 
 @media (max-width: 768px) {
@@ -227,7 +227,7 @@ section {
     left: -80px;
     width: 480px;
     height: 480px;
-    background: rgba(134, 107, 171, 0.16);
+    background: rgba(0, 0, 0, 0.06);
 }
 
 .hero-glow-pink {
@@ -235,7 +235,7 @@ section {
     right: -100px;
     width: 420px;
     height: 420px;
-    background: rgba(204, 123, 201, 0.12);
+    background: rgba(0, 0, 0, 0.04);
 }
 
 .hero-ring {
@@ -245,7 +245,7 @@ section {
     width: 220px;
     height: 220px;
     border-radius: 999px;
-    border: 1px dashed rgba(134, 107, 171, 0.25);
+    border: 1px dashed rgba(0, 0, 0, 0.2);
     pointer-events: none;
 }
 
@@ -261,14 +261,14 @@ section {
     width: 52px;
     height: 52px;
     border-radius: 14px;
-    background: rgba(56, 58, 74, 0.6);
-    border: 1px solid rgba(134, 107, 171, 0.25);
+    background: rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(0, 0, 0, 0.15);
     transition: all 0.25s ease;
 }
 
 .skill-chip:hover {
-    border-color: rgba(204, 123, 201, 0.6);
-    box-shadow: 0px 0px 18px rgba(204, 123, 201, 0.3);
+    border-color: rgba(0, 0, 0, 0.6);
+    box-shadow: 0px 0px 18px rgba(0, 0, 0, 0.25);
 }
 
 .skill-chip img {
@@ -279,6 +279,16 @@ section {
 }
 
 /* ── Bento project tile (listing page) ── */
+.masonry-tile-image {
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+}
+
+.masonry-tile:hover .masonry-tile-image {
+    transform: scale(1.02);
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.35);
+}
+
 .masonry-tile-image img {
     position: absolute;
     inset: 0;
@@ -297,7 +307,7 @@ section {
 .masonry-tile-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, rgba(20, 18, 30, 0.55), transparent 55%);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent 55%);
     opacity: 0;
     transition: opacity 0.3s ease;
     display: flex;
@@ -314,9 +324,9 @@ section {
     width: 36px;
     height: 36px;
     border-radius: 999px;
-    background: rgba(41, 43, 55, 0.85);
-    border: 1px solid rgba(204, 123, 201, 0.5);
-    color: #faf9ff;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid #000000;
+    color: #000000;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -331,9 +341,9 @@ section {
 }
 
 .masonry-tile-title {
-    transition: color 0.2s ease;
+    transition: opacity 0.2s ease;
 }
 
 .masonry-tile:hover .masonry-tile-title {
-    color: #cc7bc9;
+    opacity: 0.6;
 }
